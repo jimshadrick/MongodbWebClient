@@ -7,12 +7,10 @@ namespace MongodbWebClient.Services;
 public class BookService : IBookService
 {
     private readonly HttpClient _client;
-    private readonly JsonSerializerOptions _options;
 
     public BookService(HttpClient client)
     {
         _client = client;
-        _options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
     }
 
     public async Task<IEnumerable<BookDTO>> GetBooks()
