@@ -2,7 +2,7 @@
 
 namespace MongodbWebClient.Models;
 
-public class BookDTO
+public class Book
 {
     public string? Id { get; set; }
 

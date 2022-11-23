@@ -13,11 +13,11 @@ public class BookService : IBookService
         _client = client;
     }
 
-    public async Task<IEnumerable<BookDTO>> GetBooks()
+    public async Task<IEnumerable<Book>> GetBooks()
     {
         try
         {
-            var books = await _client.GetFromJsonAsync<IEnumerable<BookDTO>>("api/Books");
+            var books = await _client.GetFromJsonAsync<IEnumerable<Book>>("api/Books");
             return books;
         }
         catch (Exception e)
@@ -26,4 +26,5 @@ public class BookService : IBookService
             throw;
         }
     }
+
 }

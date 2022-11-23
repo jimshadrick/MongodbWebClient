@@ -1,5 +1,5 @@
-﻿@page "/Books"
-@inherits BooksBase
+﻿@page "/booklist"
+@inject IBookService BookService
 
 @if (Books == null)
 {
@@ -13,7 +13,7 @@ else
 
     if (bookCount > 0)
     {
-        var bookRowList = new List<BookDTO>();
+        var bookRowList = new List<Book>();
         bookRowList = Books.ToList();
       
         <table class="table">
@@ -40,3 +40,15 @@ else
         </table>
     }
 }
+
+@code {
+    // Property to expose book collection to razor code 
+    public IEnumerable<Book> Books { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Books = await BookService.GetBooks();
+    }
+    
+}
+

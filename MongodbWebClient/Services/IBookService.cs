@@ -4,6 +4,6 @@ namespace MongodbWebClient.Services;
 
 public interface IBookService
 {
-    /*Task<List<BookDTO>> GetBooks();*/
-    Task<IEnumerable<BookDTO>> GetBooks();
+    /*Task<List<Book>> GetBooks();*/
+    Task<IEnumerable<Book>> GetBooks();
 }
